@@ -1,0 +1,78 @@
+
+COP 4530 Project 1
+
+Summary: Implementation of fsu::List<T>
+
+
+5/18/15
+- Reviewing code; finding locations of each call to LinkIn, LinkOut, Reverse
+
+5/20/15
+- Compile error. In LinkOut: invalid use of member (List::tail_) in static
+member function
+  tail->prev_ = oldlink->prev_
+  oldLink->prev_->next_ = tail_;
+
+5/22/15
+** Error: ConstListIterator<T>::Retrieve() invalid dereference
+ for this code in function LinkIn():
+   newLink->prev_ = location;
+   newLink->next_ = location->next_;
+   location->next_ = newLink;
+   (I later tried many combinations of code to no avail)
+
+5/23/15
+-LinkIn() is now working with 4 lines of code.
+  I thought the front was to the right of current position.
+-flist.x now works (tested with lacher's example name.com)
+-mlist.x works
+
+5/24/15
+-flist.x runs with my own name.com
+
+5/25/15
+-Reverse results in segmentation fault.
+
+5/26/15
+-Working on Reverse() only today.
+-!this->Empty() to test if List is empty.
+-For (this != nullptr), compiler says 'this' shouldn't be null in well defined
+c++
+-Note: 'this' type is fsu::List<T>*
+-
+
+5/29/15
+-[1] First working copy of reverse (tested on flist.x).This can be simplified.
+-Segmentation fault if only 1 in list for [1].
+-Fixed issue with if(temp != this->head_).
+
+-Reverse() can be improved
+
+
+##############################
+CODE
+##############################
+[1]
+if(!this->Empty())
+{
+Link * link = this->tail_->prev_;
+Link * temp = link->prev_;
+this->tail_->prev_ = this->head_->next_;
+this->head_->next_ = link;
+link->prev_ = this->head_;
+
+link->next_ = temp;
+link = temp;
+temp = temp->prev_;
+while(temp != this->head_)
+{
+link->prev_ = link->next_;
+link->next_ = temp;
+temp = temp->prev_;
+link = link->next_;
+}
+link->prev_ = link->next_;
+link->next_ = this->tail_;
+
+
+}//if
