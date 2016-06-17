@@ -1,7 +1,8 @@
 
 COP 4530 Project 1
 
-Summary: Implementation of fsu::List<T>
+Summary: Implementation of fsu::List<T> missing functions.
+
 
 
 5/18/15
@@ -47,6 +48,9 @@ c++
 -Fixed issue with if(temp != this->head_).
 
 -Reverse() can be improved
+
+6/16/16
+- The whole project has been added to a private git repository.
 
 
 ##############################
