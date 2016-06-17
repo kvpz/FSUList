@@ -3,7 +3,7 @@
 #
 
 #HOME  = /home/courses/cop4530p/LIB
-HOME  = ../../Code\ files
+HOME  = ~/Documents/CodeFiles
 #TCPP  = $(HOME)/tcpp
 TCPP  = $(HOME)/mytcpp
 #CPP   = $(HOME)/cpp
