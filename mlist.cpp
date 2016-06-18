@@ -23,7 +23,7 @@
     3. Limit your memory use by entering
        "limit vmemoryuse 100000"
     4. Check that your limits have been set by entering
-       "limit"
+       "limit" or "ulimit" in bash shell
     5. Run by entering the executable name
     6. Execution should terminate when memory is used up
     7. After a run, remove your vmememoryuse restriction by entering
