@@ -1,14 +1,11 @@
 #
-# makefile for fsu::List project
+# makefile for fsu::List project 1
 #
 
 #HOME  = /home/courses/cop4530p/LIB
-<<<<<<< HEAD
 HOME  = ../../../Documents/CodeFiles
-=======
-HOME  = ../../../Code\ files
+#HOME  = ../../../Code\ files
 #TCPP  = $(HOME)/tcpp
->>>>>>> e31d1a01de3344968f19a8b0d9f8dd443675ad43
 TCPP  = $(HOME)/mytcpp
 CPP   = $(HOME)/mycpp
 TESTS = $(HOME)/tests
