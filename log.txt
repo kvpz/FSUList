@@ -1,8 +1,14 @@
 
 COP 4530 Project 1
 
+<<<<<<< HEAD
 Summary: Implementation of fsu::List<T>
 Note: It is not required to test fqueue.x for COP4530.
+=======
+Summary: Implementation of fsu::List<T> missing functions.
+
+
+>>>>>>> e31d1a01de3344968f19a8b0d9f8dd443675ad43
 
 5/18/15
 - Reviewing code; finding locations of each call to LinkIn, LinkOut, Reverse
@@ -47,6 +53,9 @@ c++
 -Fixed issue with if(temp != this->head_).
 
 -Reverse() can be improved
+
+6/16/16
+- The whole project has been added to a private git repository.
 
 
 ##############################
