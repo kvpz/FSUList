@@ -3,23 +3,22 @@
 #
 
 #HOME  = /home/courses/cop4530p/LIB
-HOME  = ~/Documents/CodeFiles
-#TCPP  = $(HOME)/tcpp
+HOME  = ../../../Documents/CodeFiles
 TCPP  = $(HOME)/mytcpp
-#CPP   = $(HOME)/cpp
 CPP   = $(HOME)/mycpp
 TESTS = $(HOME)/tests
 PROJ  = .
-CC    = g++ -std=c++11 -Wall -Wextra -I. -I$(CPP) -I$(TCPP)
+incpath = -I$(PROJ) -I$(CPP) -I$(TCPP)
+CC    = g++ -std=c++11 -Wall -Wextra $(incpath)  
 #CC    = clang++ -std=c++11 -Wall -Wextra -I. -I$(CPP) -I$(TCPP)
 
 all: flist.x mlist.x 
 
-flist.x:  $(TESTS)/flist.cpp $(TCPP)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
-	$(CC) -oflist.x $(TESTS)/flist.cpp
+flist.x:  $(PROJ)/flist.cpp $(PROJ)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
+	$(CC) -o flist.x $(PROJ)/flist.cpp
 
-mlist.x:  $(TESTS)/mlist.cpp $(TCPP)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
-	$(CC) -omlist.x $(TESTS)/mlist.cpp
+mlist.x:  $(PROJ)/mlist.cpp $(PROJ)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
+	$(CC) -o mlist.x $(PROJ)/mlist.cpp
 
-fqueue.x:  $(TESTS)/fqueue.cpp $(TCPP)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
-	$(CC) -ofqueue.x $(TESTS)/fqueue.cpp
+fqueue.x:  $(TESTS)/fqueue.cpp $(PROJ)/list.h $(TCPP)/list_sort.cpp $(PROJ)/list.cpp
+	$(CC) -o fqueue.x $(TESTS)/fqueue.cpp

@@ -2,7 +2,7 @@
 COP 4530 Project 1
 
 Summary: Implementation of fsu::List<T>
-
+Note: It is not required to test fqueue.x for COP4530.
 
 5/18/15
 - Reviewing code; finding locations of each call to LinkIn, LinkOut, Reverse
